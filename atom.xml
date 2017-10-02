@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://polyipnus.github.io/"/>
-  <updated>2017-09-04T14:33:23.000Z</updated>
+  <updated>2017-09-22T06:10:39.000Z</updated>
   <id>https://polyipnus.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python Descriptor初级篇</title>
+    <link href="https://polyipnus.github.io/2017/09/22/daily-20170922-descriptor-md/"/>
+    <id>https://polyipnus.github.io/2017/09/22/daily-20170922-descriptor-md/</id>
+    <published>2017-09-22T05:26:24.000Z</published>
+    <updated>2017-09-22T06:10:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/assets/tool/python.jpg" alt="Python-Logo"></p>
+<blockquote>
+<p>本文意在阐述Descriptor定义并概述其协议，以及展示如何调用Descriptor。深入学习自定义Descriptor和几个内置的Python Descriptor，包括函数、property、静态方法和类方法。通过纯Python代码等价实现和应用示例来揭示其运行原理。</p>
+<p>学习Descriptor不仅可以获得更多的工具集，而且可以更好地体会Python的运行原理及其优雅的设计。 </p>
+</blockquote>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/assets/tool/python.jpg&quot; alt=&quot;Python-Logo&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文意在阐述Descriptor定义并概述其协议，以及展示如何调用Descriptor。深入学习自定义Descriptor和几个内置的Python Descriptor，包括函数、property、静态方法和类方法。通过纯Python代码等价实现和应用示例来揭示其运行原理。&lt;/p&gt;
+&lt;p&gt;学习Descriptor不仅可以获得更多的工具集，而且可以更好地体会Python的运行原理及其优雅的设计。 &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="工具学习" scheme="https://polyipnus.github.io/tags/%E5%B7%A5%E5%85%B7%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>“刺客信条”三部曲：镜花水月，无心去来</title>
@@ -212,7 +242,7 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     <link href="https://polyipnus.github.io/2017/08/10/daily_20170811_supervisor/"/>
     <id>https://polyipnus.github.io/2017/08/10/daily_20170811_supervisor/</id>
     <published>2017-08-10T03:10:14.000Z</published>
-    <updated>2017-09-04T15:59:52.000Z</updated>
+    <updated>2017-10-02T15:05:07.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>supervisor是python实现的进程管理工具，能将命令行进程变为后台daemon。管理进程的启动，重启，关闭。</p>
@@ -228,24 +258,24 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 </code></pre><a id="more"></a>
 <h2 id="2-配置说明"><a href="#2-配置说明" class="headerlink" title="2. 配置说明"></a>2. 配置说明</h2><p>   下面是配置内容说明</p>
 <pre><code>[unix_http_server]
-file=/tmp/supervisor.sock ; UNIX socket 文件，supervisorctl 会使用
-;chmod=0700 ; socket 文件的 mode，默认是 0700
-;chown=nobody:nogroup ; socket 文件的 owner，格式： uid:gid
+file=/tmp/supervisor.sock   ; UNIX socket 文件，supervisorctl 会使用
+;chmod=0700                 ; socket 文件的 mode，默认是 0700
+;chown=nobody:nogroup       ; socket 文件的 owner，格式： uid:gid
 
-;[inet_http_server] ; HTTP 服务器，提供 web 管理界面
-;port=127.0.0.1:9001 ; Web 管理后台运行的 IP 和端口，如果开放到公网，需要注意安全性
-;username=user ; 登录管理后台的用户名
-;password=123 ; 登录管理后台的密码
+;[inet_http_server]         ; HTTP 服务器，提供 web 管理界面
+;port=127.0.0.1:9001        ; Web 管理后台运行的 IP 和端口，如果开放到公网，需要注意安全性
+;username=user              ; 登录管理后台的用户名
+;password=123               ; 登录管理后台的密码
 
 [supervisord]
-logfile=/tmp/supervisord.log ; 日志文件，默认是 $CWD/supervisord.log
-logfile_maxbytes=50MB ; 日志文件大小，超出会 rotate，默认 50MB
-logfile_backups=10 ; 日志文件保留备份数量默认 10
-loglevel=info ; 日志级别，默认 info，其它: debug,warn,trace
-pidfile=/tmp/supervisord.pid ; pid 文件
-nodaemon=false ; 是否在前台启动，默认是 false，即以 daemon 的方式启动
-minfds=1024 ; 可以打开的文件描述符的最小值，默认 1024
-minprocs=200 ; 可以打开的进程数的最小值，默认 200
+logfile=/tmp/supervisord.log    ; 日志文件，默认是 $CWD/supervisord.log
+logfile_maxbytes=50MB           ; 日志文件大小，超出会 rotate，默认 50MB
+logfile_backups=10              ; 日志文件保留备份数量默认 10
+loglevel=info                   ; 日志级别，默认 info，其它: debug,warn,trace
+pidfile=/tmp/supervisord.pid    ; pid 文件
+nodaemon=false                  ; 是否在前台启动，默认是 false，即以 daemon 的方式启动
+minfds=1024                     ; 可以打开的文件描述符的最小值，默认 1024
+minprocs=200                    ; 可以打开的进程数的最小值，默认 200
 
 ; the below section must remain in the config file for RPC
 ; (supervisorctl/web interface) to work, additional interfaces may be
@@ -257,30 +287,29 @@ supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 serverurl=unix:///tmp/supervisor.sock   ; 通过UNIX socket连接supervisord
 serverurl=http://127.0.0.1:9001         ; 通过 HTTP 的方式连接 supervisord
 
-; 包含其他的配置文件
-[include]
-files = relative/directory/*.ini ; 可以是 *.conf 或 *.ini
+[include]                               ; 包含其他的配置文件
+files = relative/directory/*.ini        ; 可以是 *.conf 或 *.ini
 </code></pre><h1 id="3-进程使用例子"><a href="#3-进程使用例子" class="headerlink" title="3. 进程使用例子"></a>3. 进程使用例子</h1><pre><code>使用例子说明
 
     [unix_http_server]
-    file=/tmp/supervisor.sock ; UNIX socket 文件，supervisorctl 会使用
-    ;chmod=0700 ; socket 文件的 mode，默认是 0700
-    ;chown=nobody:nogroup ; socket 文件的 owner，格式： uid:gid
+    file=/tmp/supervisor.sock   ; UNIX socket 文件，supervisorctl 会使用
+    ;chmod=0700                 ; socket 文件的 mode，默认是 0700
+    ;chown=nobody:nogroup       ; socket 文件的 owner，格式： uid:gid
 
-    ;[inet_http_server] ; HTTP 服务器，提供 web 管理界面
-    ;port=127.0.0.1:9001 ; Web 管理后台运行的IP 和端口，如果开放到公网需要注意安全性
-    ;username=user ; 登录管理后台的用户名
-    ;password=123 ; 登录管理后台的密码
+    ;[inet_http_server]         ; HTTP 服务器，提供 web 管理界面
+    ;port=127.0.0.1:9001        ; Web 管理后台运行的IP 和端口，如果开放到公网需要注意安全性
+    ;username=user              ; 登录管理后台的用户名
+    ;password=123               ; 登录管理后台的密码
 
     [supervisord]
-    logfile=/tmp/supervisord.log ; 日志文件，默认是 $CWD/supervisord.log
-    logfile_maxbytes=50MB ; 日志文件大小，超出会 rotate，默认 50MB
-    logfile_backups=10 ; 日志文件保留备份数量默认 10
-    loglevel=info ; 日志级别，默认 info，其它: debug,warn,trace
-    pidfile=/tmp/supervisord.pid ; pid 文件
-    nodaemon=false ; 是否在前台启动，默认是 false，即以 daemon 的方式启动
-    minfds=1024 ; 可以打开的文件描述符的最小值，默认 1024
-    minprocs=200 ; 可以打开的进程数的最小值，默认 200
+    logfile=/tmp/supervisord.log    ; 日志文件，默认是 $CWD/supervisord.log
+    logfile_maxbytes=50MB           ; 日志文件大小，超出会 rotate，默认 50MB
+    logfile_backups=10              ; 日志文件保留备份数量默认 10
+    loglevel=info                   ; 日志级别，默认 info，其它: debug, warn, trace
+    pidfile=/tmp/supervisord.pid    ; pid 文件
+    nodaemon=false                  ; 是否在前台启动，默认是 false，即以 daemon 的方式启动
+    minfds=1024                     ; 可以打开的文件描述符的最小值，默认 1024
+    minprocs=200                    ; 可以打开的进程数的最小值，默认 200
 
     ; the below section must remain in the config file for RPC
     ; (supervisorctl/web interface) to work, additional interfaces may be
@@ -292,9 +321,8 @@ files = relative/directory/*.ini ; 可以是 *.conf 或 *.ini
     serverurl=unix:///tmp/supervisor.sock   ; 通过UNIX socket连接supervisord
     serverurl=http://127.0.0.1:9001         ; 通过HTTP的方式连接 supervisord
 
-    ; 包含其他的配置文件
-    [include]
-    files = relative/directory/*.ini ; 可以是 *.conf 或 *.ini
+    [include]                               ; 包含其他的配置文件
+    files = relative/directory/*.ini        ; 可以是 *.conf 或 *.ini
 </code></pre><h1 id="4-配置引用"><a href="#4-配置引用" class="headerlink" title="4. 配置引用"></a>4. 配置引用</h1><p>将进程配置添加到supervisord.conf文件中, 推荐将各个进程配置放到单独的文件中，然后通过[include]配置项引用</p>
 <pre><code>[include]
 files = /etc/supervisor/*.conf
@@ -306,11 +334,11 @@ $ supervisorctl start usercenter
 $ supervisorctl restart usercenter
 $ supervisorctl reread
 $ supervisorctl update
-</code></pre><h1 id="7-supervisor-web管理界面"><a href="#7-supervisor-web管理界面" class="headerlink" title="7. supervisor web管理界面"></a>7. supervisor web管理界面</h1><p>在浏览器中输入<a href="http://127.0.0.1:9001，可进入web管理界面" target="_blank" rel="external">http://127.0.0.1:9001，可进入web管理界面</a></p>
-<pre><code>[inet_http_server] ; HTTP 服务器，提供 web 管理界面
-;port=127.0.0.1:9001 ; Web 管理后台运行的IP和端口，如果开放到公网，需要注意安全性
-;username=user ; 登录管理后台的用户名
-;password=123 ; 登录管理后台的密码
+</code></pre><h1 id="7-supervisor-web管理界面"><a href="#7-supervisor-web管理界面" class="headerlink" title="7. supervisor web管理界面"></a>7. supervisor web管理界面</h1><p>在浏览器中输入<code>http://127.0.0.1:9001</code>，可进入web管理界面</p>
+<pre><code>[inet_http_server]      ; HTTP 服务器，提供 web 管理界面
+; port=127.0.0.1:9001   ; Web 管理后台运行的IP和端口，如果开放到公网，需要注意安全性
+; username=user         ; 登录管理后台的用户名
+; password=123          ; 登录管理后台的密码
 </code></pre><h2 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a>参考引用</h2><p>更多使用和参考资料可查看以下资源</p>
 <ol>
 <li><a href="http://supervisord.org/index.html" target="_blank" rel="external">官方主页</a></li>
