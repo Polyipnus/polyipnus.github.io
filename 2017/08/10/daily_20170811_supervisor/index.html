@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://polyipnus.github.io/2017/08/10/daily_20170811_supervisor/index.html">
 <meta property="og:site_name" content="Shaoshuai&#39;s Blog">
 <meta property="og:description" content="supervisor是python实现的进程管理工具，能将命令行进程变为后台daemon。管理进程的启动，重启，关闭。 有兴趣的话可以看下官方详细介绍。  1. 安装说明1. Debian/Ubuntu可以直接通过apt-get安装:     apt-get install supervisor  2. supervisor配置文件     echo_supervisord_conf &amp;gt;">
-<meta property="og:updated_time" content="2017-10-02T15:05:07.000Z">
+<meta property="og:updated_time" content="2017-10-02T15:32:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="supervisor 快速进阶">
 <meta name="twitter:description" content="supervisor是python实现的进程管理工具，能将命令行进程变为后台daemon。管理进程的启动，重启，关闭。 有兴趣的话可以看下官方详细介绍。  1. 安装说明1. Debian/Ubuntu可以直接通过apt-get安装:     apt-get install supervisor  2. supervisor配置文件     echo_supervisord_conf &amp;gt;">
@@ -239,7 +239,7 @@ serverurl=http://127.0.0.1:9001         ; 通过 HTTP 的方式连接 supervisor
 
 [include]                               ; 包含其他的配置文件
 files = relative/directory/*.ini        ; 可以是 *.conf 或 *.ini
-</code></pre><h1 id="3-进程使用例子"><a href="#3-进程使用例子" class="headerlink" title="3. 进程使用例子"></a>3. 进程使用例子</h1><pre><code>使用例子说明
+</code></pre><h2 id="3-进程使用例子"><a href="#3-进程使用例子" class="headerlink" title="3. 进程使用例子"></a>3. 进程使用例子</h2><pre><code>使用例子说明
 
     [unix_http_server]
     file=/tmp/supervisor.sock   ; UNIX socket 文件，supervisorctl 会使用
@@ -273,18 +273,18 @@ files = relative/directory/*.ini        ; 可以是 *.conf 或 *.ini
 
     [include]                               ; 包含其他的配置文件
     files = relative/directory/*.ini        ; 可以是 *.conf 或 *.ini
-</code></pre><h1 id="4-配置引用"><a href="#4-配置引用" class="headerlink" title="4. 配置引用"></a>4. 配置引用</h1><p>将进程配置添加到supervisord.conf文件中, 推荐将各个进程配置放到单独的文件中，然后通过[include]配置项引用</p>
+</code></pre><h2 id="4-配置引用"><a href="#4-配置引用" class="headerlink" title="4. 配置引用"></a>4. 配置引用</h2><p>将进程配置添加到supervisord.conf文件中, 推荐将各个进程配置放到单独的文件中，然后通过[include]配置项引用</p>
 <pre><code>[include]
 files = /etc/supervisor/*.conf
-</code></pre><h1 id="5-服务启动"><a href="#5-服务启动" class="headerlink" title="5. 服务启动"></a>5. 服务启动</h1><pre><code>supervisord -c /etc/supervisord.conf 
-</code></pre><h1 id="6-服务客户端管理"><a href="#6-服务客户端管理" class="headerlink" title="6. 服务客户端管理"></a>6. 服务客户端管理</h1><p>可以使用supervisord的命令行客户端管理工具supervisorctl，来管理进程。</p>
+</code></pre><h2 id="5-服务启动"><a href="#5-服务启动" class="headerlink" title="5. 服务启动"></a>5. 服务启动</h2><pre><code>supervisord -c /etc/supervisord.conf 
+</code></pre><h2 id="6-服务客户端管理"><a href="#6-服务客户端管理" class="headerlink" title="6. 服务客户端管理"></a>6. 服务客户端管理</h2><p>可以使用supervisord的命令行客户端管理工具supervisorctl，来管理进程。</p>
 <pre><code>$ supervisorctl status
 $ supervisorctl stop usercenter
 $ supervisorctl start usercenter
 $ supervisorctl restart usercenter
 $ supervisorctl reread
 $ supervisorctl update
-</code></pre><h1 id="7-supervisor-web管理界面"><a href="#7-supervisor-web管理界面" class="headerlink" title="7. supervisor web管理界面"></a>7. supervisor web管理界面</h1><p>在浏览器中输入<code>http://127.0.0.1:9001</code>，可进入web管理界面</p>
+</code></pre><h2 id="7-supervisor-web管理界面"><a href="#7-supervisor-web管理界面" class="headerlink" title="7. supervisor web管理界面"></a>7. supervisor web管理界面</h2><p>在浏览器中输入<code>http://127.0.0.1:9001</code>，可进入web管理界面</p>
 <pre><code>[inet_http_server]      ; HTTP 服务器，提供 web 管理界面
 ; port=127.0.0.1:9001   ; Web 管理后台运行的IP和端口，如果开放到公网，需要注意安全性
 ; username=user         ; 登录管理后台的用户名
@@ -549,11 +549,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
+                <a href="javascript:void(0)" class="js-tag color5">读书感悟</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">读书感悟</a>
+                <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
               </li>
             
             <div class="clearfix"></div>

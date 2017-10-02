@@ -242,7 +242,7 @@ proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     <link href="https://polyipnus.github.io/2017/08/10/daily_20170811_supervisor/"/>
     <id>https://polyipnus.github.io/2017/08/10/daily_20170811_supervisor/</id>
     <published>2017-08-10T03:10:14.000Z</published>
-    <updated>2017-10-02T15:05:07.000Z</updated>
+    <updated>2017-10-02T15:32:34.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>supervisor是python实现的进程管理工具，能将命令行进程变为后台daemon。管理进程的启动，重启，关闭。</p>
@@ -289,7 +289,7 @@ serverurl=http://127.0.0.1:9001         ; 通过 HTTP 的方式连接 supervisor
 
 [include]                               ; 包含其他的配置文件
 files = relative/directory/*.ini        ; 可以是 *.conf 或 *.ini
-</code></pre><h1 id="3-进程使用例子"><a href="#3-进程使用例子" class="headerlink" title="3. 进程使用例子"></a>3. 进程使用例子</h1><pre><code>使用例子说明
+</code></pre><h2 id="3-进程使用例子"><a href="#3-进程使用例子" class="headerlink" title="3. 进程使用例子"></a>3. 进程使用例子</h2><pre><code>使用例子说明
 
     [unix_http_server]
     file=/tmp/supervisor.sock   ; UNIX socket 文件，supervisorctl 会使用
@@ -323,18 +323,18 @@ files = relative/directory/*.ini        ; 可以是 *.conf 或 *.ini
 
     [include]                               ; 包含其他的配置文件
     files = relative/directory/*.ini        ; 可以是 *.conf 或 *.ini
-</code></pre><h1 id="4-配置引用"><a href="#4-配置引用" class="headerlink" title="4. 配置引用"></a>4. 配置引用</h1><p>将进程配置添加到supervisord.conf文件中, 推荐将各个进程配置放到单独的文件中，然后通过[include]配置项引用</p>
+</code></pre><h2 id="4-配置引用"><a href="#4-配置引用" class="headerlink" title="4. 配置引用"></a>4. 配置引用</h2><p>将进程配置添加到supervisord.conf文件中, 推荐将各个进程配置放到单独的文件中，然后通过[include]配置项引用</p>
 <pre><code>[include]
 files = /etc/supervisor/*.conf
-</code></pre><h1 id="5-服务启动"><a href="#5-服务启动" class="headerlink" title="5. 服务启动"></a>5. 服务启动</h1><pre><code>supervisord -c /etc/supervisord.conf 
-</code></pre><h1 id="6-服务客户端管理"><a href="#6-服务客户端管理" class="headerlink" title="6. 服务客户端管理"></a>6. 服务客户端管理</h1><p>可以使用supervisord的命令行客户端管理工具supervisorctl，来管理进程。</p>
+</code></pre><h2 id="5-服务启动"><a href="#5-服务启动" class="headerlink" title="5. 服务启动"></a>5. 服务启动</h2><pre><code>supervisord -c /etc/supervisord.conf 
+</code></pre><h2 id="6-服务客户端管理"><a href="#6-服务客户端管理" class="headerlink" title="6. 服务客户端管理"></a>6. 服务客户端管理</h2><p>可以使用supervisord的命令行客户端管理工具supervisorctl，来管理进程。</p>
 <pre><code>$ supervisorctl status
 $ supervisorctl stop usercenter
 $ supervisorctl start usercenter
 $ supervisorctl restart usercenter
 $ supervisorctl reread
 $ supervisorctl update
-</code></pre><h1 id="7-supervisor-web管理界面"><a href="#7-supervisor-web管理界面" class="headerlink" title="7. supervisor web管理界面"></a>7. supervisor web管理界面</h1><p>在浏览器中输入<code>http://127.0.0.1:9001</code>，可进入web管理界面</p>
+</code></pre><h2 id="7-supervisor-web管理界面"><a href="#7-supervisor-web管理界面" class="headerlink" title="7. supervisor web管理界面"></a>7. supervisor web管理界面</h2><p>在浏览器中输入<code>http://127.0.0.1:9001</code>，可进入web管理界面</p>
 <pre><code>[inet_http_server]      ; HTTP 服务器，提供 web 管理界面
 ; port=127.0.0.1:9001   ; Web 管理后台运行的IP和端口，如果开放到公网，需要注意安全性
 ; username=user         ; 登录管理后台的用户名
