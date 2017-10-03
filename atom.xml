@@ -91,18 +91,26 @@
   </entry>
   
   <entry>
-    <title>黑白键的独白</title>
+    <title>欠你一句别了，青春</title>
     <link href="https://polyipnus.github.io/2017/08/11/daily_20170812_deepthought/"/>
     <id>https://polyipnus.github.io/2017/08/11/daily_20170812_deepthought/</id>
     <published>2017-08-11T15:22:20.000Z</published>
-    <updated>2017-09-04T14:33:23.000Z</updated>
+    <updated>2017-10-03T03:30:14.000Z</updated>
     
     <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=4922660&auto=0&height=66" style="margin-left: -10px;"></iframe>
 
 <blockquote>
-<p>黑白键<br><strong>“很多时候, 静静的听着黑白键能够给自己内心的安静, 可以忘却很多烦恼, 找到内真正的自己…”</strong></p>
+<p>流水年华, 物是人非, 岁月已悄上眉梢. 那曾经一起幻想的小屁孩, 都渐行渐远, 聚少离多.<br>父母渐老, 自力尚浅, 责任已悄上肩膀. 那曾经一起玩耍的小屁孩, 都结婚生子, 养家糊口.<br><strong>…</strong></p>
 </blockquote>
 <a id="more"></a>
+<p><br></p>
+<font color="#D2B48C"><em>写给开始..</em></font>
+
+<p><em>还记得，一起打闹穿梭在稻田间</em><br><em>那时候，清澈的笑声荡漾在天际间</em><br><em>微风中，仿佛弥漫着甜蜜的果酿</em><br><em>不经意，传来迷人的飘香</em></p>
+<p><em>那赖皮的老黄牛啊@…@</em><br><em>可不允再偷吃邻家老黄的稻苗呀~</em><br><em>老黄呀，有话好说，放下你手中的锄头~_~</em><br><em>扛着追跑可累呀@_@</em></p>
+<p><em>还有你这个笨笨的小朱子$_$</em><br><em>下次偷大朱子的番薯呀..</em><br><em>记得不要把大朱子偷回来&gt;_&lt;</em></p>
+<p><em>可怜的老妈子~</em><br><em>每天都要挨家挨户把我捆回去~_~</em><br><em>还有那做不会的作业</em><br><em>学霸同桌这次再借我抄一会~~</em></p>
+<p><font color="#D2B48C"><em>最后写给自己..</em></font><br><strong><font color="#0099FF">岁月如若静好, 则怡养身心. 岁月倘若惨淡，则多番历经…</font></strong></p>
 ]]></content>
     
     <summary type="html">
@@ -110,7 +118,7 @@
       &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=4922660&amp;auto=0&amp;height=66&quot; style=&quot;margin-left: -10px;&quot;&gt;&lt;/iframe&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;黑白键&lt;br&gt;&lt;strong&gt;“很多时候, 静静的听着黑白键能够给自己内心的安静, 可以忘却很多烦恼, 找到内真正的自己…”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;流水年华, 物是人非, 岁月已悄上眉梢. 那曾经一起幻想的小屁孩, 都渐行渐远, 聚少离多.&lt;br&gt;父母渐老, 自力尚浅, 责任已悄上肩膀. 那曾经一起玩耍的小屁孩, 都结婚生子, 养家糊口.&lt;br&gt;&lt;strong&gt;…&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -125,7 +133,7 @@
     <link href="https://polyipnus.github.io/2017/08/10/daily_20170810_nginx/"/>
     <id>https://polyipnus.github.io/2017/08/10/daily_20170810_nginx/</id>
     <published>2017-08-10T03:18:54.000Z</published>
-    <updated>2017-09-04T14:33:23.000Z</updated>
+    <updated>2017-10-03T01:53:15.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>反向代理(reverse proxy)</p>
@@ -198,13 +206,12 @@ proxy_temp_file_write_size 64k;
 </code></pre><h2 id="upstream-模块"><a href="#upstream-模块" class="headerlink" title="upstream 模块"></a>upstream 模块</h2><blockquote>
 <p>待更新</p>
 </blockquote>
-<h2 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a>参考引用</h2><blockquote>
+<h2 id="参考引用"><a href="#参考引用" class="headerlink" title="参考引用"></a>参考引用</h2><p>&gt;</p>
 <ol>
 <li><a href="http://supervisord.org/index.html" target="_blank" rel="external">官方主页</a></li>
 <li><a href="https://github.com/Supervisor/supervisor" target="_blank" rel="external">源码GitHub</a><p><img src="/assets/tool/daily_nginx_01.jpg" alt="" width="400" height="80"></p>
 </li>
 </ol>
-</blockquote>
 ]]></content>
     
     <summary type="html">
