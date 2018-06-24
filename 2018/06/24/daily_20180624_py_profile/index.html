@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://polyipnus.github.io">
-  <title>Polyipnus&#39;s Blog</title>
+  <title>Python性能工具使用初探 | Polyipnus&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Python性能工具使用初探 在python开发过程中，针对性能较差的代码通常需要分析调整，以改善运行的效率。本文将简单介绍python常用的性能分析调整工具，更深入的使用可结合官方文档和实际项目进行实践。  timeit如果项目中只需要简单统计运行时间的情况，timeit简单易用，可以配置任务次数测试运行性能情况。 12345678import timeitdef test():    for">
+  <meta name="description" content="在python开发过程中，针对性能较差的代码通常需要分析调整，以改善运行的效率。本文将简单介绍python常用的性能分析调整工具，更深入的使用可结合官方文档和实际项目进行实践。  timeit如果项目中只需要简单统计运行时间的情况，timeit简单易用，可以配置任务次数测试运行性能情况。 12345678import timeitdef test():    for i in xrange(10">
+<meta name="keywords" content="工具学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Polyipnus&#39;s Blog">
+<meta property="og:title" content="Python性能工具使用初探">
 <meta property="og:url" content="https://polyipnus.github.io/2018/06/24/daily_20180624_py_profile/index.html">
 <meta property="og:site_name" content="Polyipnus&#39;s Blog">
-<meta property="og:description" content="Python性能工具使用初探 在python开发过程中，针对性能较差的代码通常需要分析调整，以改善运行的效率。本文将简单介绍python常用的性能分析调整工具，更深入的使用可结合官方文档和实际项目进行实践。  timeit如果项目中只需要简单统计运行时间的情况，timeit简单易用，可以配置任务次数测试运行性能情况。 12345678import timeitdef test():    for">
+<meta property="og:description" content="在python开发过程中，针对性能较差的代码通常需要分析调整，以改善运行的效率。本文将简单介绍python常用的性能分析调整工具，更深入的使用可结合官方文档和实际项目进行实践。  timeit如果项目中只需要简单统计运行时间的情况，timeit简单易用，可以配置任务次数测试运行性能情况。 12345678import timeitdef test():    for i in xrange(10">
 <meta property="og:image" content="https://polyipnus.github.io/assets/tool/sample-graph.png">
 <meta property="og:image" content="https://polyipnus.github.io/assets/tool/sample-backref-graph.png">
-<meta property="og:updated_time" content="2018-06-24T06:35:41.612Z">
+<meta property="og:updated_time" content="2018-06-24T14:28:36.382Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Polyipnus&#39;s Blog">
-<meta name="twitter:description" content="Python性能工具使用初探 在python开发过程中，针对性能较差的代码通常需要分析调整，以改善运行的效率。本文将简单介绍python常用的性能分析调整工具，更深入的使用可结合官方文档和实际项目进行实践。  timeit如果项目中只需要简单统计运行时间的情况，timeit简单易用，可以配置任务次数测试运行性能情况。 12345678import timeitdef test():    for">
+<meta name="twitter:title" content="Python性能工具使用初探">
+<meta name="twitter:description" content="在python开发过程中，针对性能较差的代码通常需要分析调整，以改善运行的效率。本文将简单介绍python常用的性能分析调整工具，更深入的使用可结合官方文档和实际项目进行实践。  timeit如果项目中只需要简单统计运行时间的情况，timeit简单易用，可以配置任务次数测试运行性能情况。 12345678import timeitdef test():    for i in xrange(10">
 <meta name="twitter:image" content="https://polyipnus.github.io/assets/tool/sample-graph.png">
   
     <link rel="alternative" href="/atom.xml" title="Polyipnus&#39;s Blog" type="application/atom+xml">
@@ -68,6 +69,8 @@
 				<li><a href="/tags/工具学习/">工具学习</a></li>
 	        
 				<li><a href="/tags/读书感悟/">读书感悟</a></li>
+	        
+				<li><a href="/tags/源码阅读/">源码阅读</a></li>
 	        
 			</ul>
 		</nav>
@@ -133,6 +136,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -155,13 +160,15 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">个人主页</a></li>
+					<li style="width: 20%"><a href="/">个人主页</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/心情随笔/">心情随笔</a></li>
+					<li style="width: 20%"><a href="/tags/心情随笔/">心情随笔</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/工具学习/">工具学习</a></li>
+					<li style="width: 20%"><a href="/tags/工具学习/">工具学习</a></li>
 		        
-					<li style="width: 25%"><a href="/tags/读书感悟/">读书感悟</a></li>
+					<li style="width: 20%"><a href="/tags/读书感悟/">读书感悟</a></li>
+		        
+					<li style="width: 20%"><a href="/tags/源码阅读/">源码阅读</a></li>
 		        
 				</ul>
 			</nav>
@@ -179,9 +186,24 @@
             <article id="post-daily_20180624_py_profile" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python性能工具使用初探
+    </h1>
+  
+
+        
+        <a href="/2018/06/24/daily_20180624_py_profile/" class="archive-article-date">
+  	<time datetime="2018-06-24T05:26:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-24</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Python性能工具使用初探"><a href="#Python性能工具使用初探" class="headerlink" title="Python性能工具使用初探"></a>Python性能工具使用初探</h1><blockquote>
+        <blockquote>
 <p>在python开发过程中，针对性能较差的代码通常需要分析调整，以改善运行的效率。本文将简单介绍python常用的性能分析调整工具，更深入的使用可结合官方文档和实际项目进行实践。</p>
 </blockquote>
 <h2 id="timeit"><a href="#timeit" class="headerlink" title="timeit"></a>timeit</h2><p>如果项目中只需要简单统计运行时间的情况，<code>timeit</code>简单易用，可以配置任务次数测试运行性能情况。</p>
@@ -267,6 +289,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">工具学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -332,8 +365,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/05/19/daily_20180519_pyint/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2018/05/10/daily_20180519_pyint/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python源代码学习-对象机制</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -473,6 +506,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">源码阅读</a>
               </li>
             
             <div class="clearfix"></div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://polyipnus.github.io/"/>
-  <updated>2018-06-24T06:35:41.612Z</updated>
+  <updated>2018-06-24T14:28:36.382Z</updated>
   <id>https://polyipnus.github.io/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Python性能工具使用初探</title>
     <link href="https://polyipnus.github.io/2018/06/24/daily_20180624_py_profile/"/>
     <id>https://polyipnus.github.io/2018/06/24/daily_20180624_py_profile/</id>
-    <published>2018-06-23T16:11:59.610Z</published>
-    <updated>2018-06-24T06:35:41.612Z</updated>
+    <published>2018-06-24T05:26:24.000Z</published>
+    <updated>2018-06-24T14:28:36.382Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Python性能工具使用初探"><a href="#Python性能工具使用初探" class="headerlink" title="Python性能工具使用初探"></a>Python性能工具使用初探</h1><blockquote>
+    <content type="html"><![CDATA[<blockquote>
 <p>在python开发过程中，针对性能较差的代码通常需要分析调整，以改善运行的效率。本文将简单介绍python常用的性能分析调整工具，更深入的使用可结合官方文档和实际项目进行实践。</p>
 </blockquote>
 <h2 id="timeit"><a href="#timeit" class="headerlink" title="timeit"></a>timeit</h2><p>如果项目中只需要简单统计运行时间的情况，<code>timeit</code>简单易用，可以配置任务次数测试运行性能情况。</p>
@@ -104,7 +104,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Python性能工具使用初探&quot;&gt;&lt;a href=&quot;#Python性能工具使用初探&quot; class=&quot;headerlink&quot; title=&quot;Python性能工具使用初探&quot;&gt;&lt;/a&gt;Python性能工具使用初探&lt;/h1&gt;&lt;blockquote&gt;
+      &lt;blockquote&gt;
 &lt;p&gt;在python开发过程中，针对性能较差的代码通常需要分析调整，以改善运行的效率。本文将简单介绍python常用的性能分析调整工具，更深入的使用可结合官方文档和实际项目进行实践。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;timeit&quot;&gt;&lt;a href=&quot;#timeit&quot; class=&quot;headerlink&quot; title=&quot;timeit&quot;&gt;&lt;/a&gt;timeit&lt;/h2&gt;&lt;p&gt;如果项目中只需要简单统计运行时间的情况，&lt;code&gt;timeit&lt;/code&gt;简单易用，可以配置任务次数测试运行性能情况。&lt;/p&gt;
@@ -114,16 +114,18 @@
     </summary>
     
     
+      <category term="工具学习" scheme="https://polyipnus.github.io/tags/%E5%B7%A5%E5%85%B7%E5%AD%A6%E4%B9%A0/"/>
+    
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://polyipnus.github.io/2018/05/19/daily_20180519_pyint/"/>
-    <id>https://polyipnus.github.io/2018/05/19/daily_20180519_pyint/</id>
-    <published>2018-05-19T13:09:37.355Z</published>
-    <updated>2018-06-20T12:53:58.143Z</updated>
+    <title>Python源代码学习-对象机制</title>
+    <link href="https://polyipnus.github.io/2018/05/10/daily_20180519_pyint/"/>
+    <id>https://polyipnus.github.io/2018/05/10/daily_20180519_pyint/</id>
+    <published>2018-05-10T12:00:24.000Z</published>
+    <updated>2018-06-24T14:31:09.544Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Python源代码学习-对象机制"><a href="#Python源代码学习-对象机制" class="headerlink" title="Python源代码学习-对象机制"></a>Python源代码学习-对象机制</h2><blockquote>
+    <content type="html"><![CDATA[<blockquote>
 <p>在Python中, 万物皆对象，而所有对象的共性内容都被定义在PyObject中。PyObject可谓是Python对象机制的基石。<br>本文将简要介绍Python对象机制的实现, 以及其涉及的数据结构和原理。</p>
 </blockquote>
 <h3 id="对象机制基石-PyObject"><a href="#对象机制基石-PyObject" class="headerlink" title="对象机制基石-PyObject"></a>对象机制基石-<code>PyObject</code></h3><p>在介绍Python对象之前，首先有必要介绍一下<code>PyObject</code>和<code>PyVarObject</code>的定义。通过typedef定义了<code>结构体_object</code>新的数据类型名: <code>PyObject</code>,而<code>PyObject</code>的核心定义在宏<code>PyObject_HEAD</code>。而<code>PyVarObject</code>实际是在<code>PyObject_HEAD</code>的基础上增加了变长数量<code>ob_size</code>字段。</p>
@@ -142,7 +144,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Python源代码学习-对象机制&quot;&gt;&lt;a href=&quot;#Python源代码学习-对象机制&quot; class=&quot;headerlink&quot; title=&quot;Python源代码学习-对象机制&quot;&gt;&lt;/a&gt;Python源代码学习-对象机制&lt;/h2&gt;&lt;blockquote&gt;
+      &lt;blockquote&gt;
 &lt;p&gt;在Python中, 万物皆对象，而所有对象的共性内容都被定义在PyObject中。PyObject可谓是Python对象机制的基石。&lt;br&gt;本文将简要介绍Python对象机制的实现, 以及其涉及的数据结构和原理。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&quot;对象机制基石-PyObject&quot;&gt;&lt;a href=&quot;#对象机制基石-PyObject&quot; class=&quot;headerlink&quot; title=&quot;对象机制基石-PyObject&quot;&gt;&lt;/a&gt;对象机制基石-&lt;code&gt;PyObject&lt;/code&gt;&lt;/h3&gt;&lt;p&gt;在介绍Python对象之前，首先有必要介绍一下&lt;code&gt;PyObject&lt;/code&gt;和&lt;code&gt;PyVarObject&lt;/code&gt;的定义。通过typedef定义了&lt;code&gt;结构体_object&lt;/code&gt;新的数据类型名: &lt;code&gt;PyObject&lt;/code&gt;,而&lt;code&gt;PyObject&lt;/code&gt;的核心定义在宏&lt;code&gt;PyObject_HEAD&lt;/code&gt;。而&lt;code&gt;PyVarObject&lt;/code&gt;实际是在&lt;code&gt;PyObject_HEAD&lt;/code&gt;的基础上增加了变长数量&lt;code&gt;ob_size&lt;/code&gt;字段。&lt;/p&gt;
@@ -151,6 +153,8 @@
     
     </summary>
     
+    
+      <category term="源码阅读" scheme="https://polyipnus.github.io/tags/%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
@@ -232,7 +236,7 @@
     <link href="https://polyipnus.github.io/2017/08/11/daily_20170812_deepthought/"/>
     <id>https://polyipnus.github.io/2017/08/11/daily_20170812_deepthought/</id>
     <published>2017-08-11T15:22:20.000Z</published>
-    <updated>2017-10-03T03:30:14.000Z</updated>
+    <updated>2018-06-24T14:25:57.131Z</updated>
     
     <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=4922660&auto=0&height=66" style="margin-left: -10px;"></iframe>
 

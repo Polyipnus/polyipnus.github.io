@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://polyipnus.github.io">
-  <title>欠你一句别了，青春 | Polyipnus&#39;s Blog</title>
+  <title>Python源代码学习-对象机制 | Polyipnus&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="流水年华, 物是人非, 岁月已悄上眉梢. 那曾经一起幻想的小屁孩, 都渐行渐远, 聚少离多.父母渐老, 自力尚浅, 责任已悄上肩膀. 那曾经一起玩耍的小屁孩, 都结婚生子, 养家糊口.…">
-<meta name="keywords" content="心情随笔">
+  <meta name="description" content="在Python中, 万物皆对象，而所有对象的共性内容都被定义在PyObject中。PyObject可谓是Python对象机制的基石。本文将简要介绍Python对象机制的实现, 以及其涉及的数据结构和原理。  对象机制基石-PyObject在介绍Python对象之前，首先有必要介绍一下PyObject和PyVarObject的定义。通过typedef定义了结构体_object新的数据类型名: Py">
+<meta name="keywords" content="源码阅读">
 <meta property="og:type" content="article">
-<meta property="og:title" content="欠你一句别了，青春">
-<meta property="og:url" content="https://polyipnus.github.io/2017/08/11/daily_20170812_deepthought/index.html">
+<meta property="og:title" content="Python源代码学习-对象机制">
+<meta property="og:url" content="https://polyipnus.github.io/2018/05/10/daily_20180519_pyint/index.html">
 <meta property="og:site_name" content="Polyipnus&#39;s Blog">
-<meta property="og:description" content="流水年华, 物是人非, 岁月已悄上眉梢. 那曾经一起幻想的小屁孩, 都渐行渐远, 聚少离多.父母渐老, 自力尚浅, 责任已悄上肩膀. 那曾经一起玩耍的小屁孩, 都结婚生子, 养家糊口.…">
-<meta property="og:updated_time" content="2018-06-24T14:25:57.131Z">
+<meta property="og:description" content="在Python中, 万物皆对象，而所有对象的共性内容都被定义在PyObject中。PyObject可谓是Python对象机制的基石。本文将简要介绍Python对象机制的实现, 以及其涉及的数据结构和原理。  对象机制基石-PyObject在介绍Python对象之前，首先有必要介绍一下PyObject和PyVarObject的定义。通过typedef定义了结构体_object新的数据类型名: Py">
+<meta property="og:updated_time" content="2018-06-24T14:31:09.544Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欠你一句别了，青春">
-<meta name="twitter:description" content="流水年华, 物是人非, 岁月已悄上眉梢. 那曾经一起幻想的小屁孩, 都渐行渐远, 聚少离多.父母渐老, 自力尚浅, 责任已悄上肩膀. 那曾经一起玩耍的小屁孩, 都结婚生子, 养家糊口.…">
+<meta name="twitter:title" content="Python源代码学习-对象机制">
+<meta name="twitter:description" content="在Python中, 万物皆对象，而所有对象的共性内容都被定义在PyObject中。PyObject可谓是Python对象机制的基石。本文将简要介绍Python对象机制的实现, 以及其涉及的数据结构和原理。  对象机制基石-PyObject在介绍Python对象之前，首先有必要介绍一下PyObject和PyVarObject的定义。通过typedef定义了结构体_object新的数据类型名: Py">
   
     <link rel="alternative" href="/atom.xml" title="Polyipnus&#39;s Blog" type="application/atom+xml">
   
@@ -180,40 +180,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-daily_20170812_deepthought" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-daily_20180519_pyint" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      欠你一句别了，青春
+      Python源代码学习-对象机制
     </h1>
   
 
         
-        <a href="/2017/08/11/daily_20170812_deepthought/" class="archive-article-date">
-  	<time datetime="2017-08-11T15:22:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-11</time>
+        <a href="/2018/05/10/daily_20180519_pyint/" class="archive-article-date">
+  	<time datetime="2018-05-10T12:00:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=4922660&auto=0&height=66" style="margin-left: -10px;"></iframe>
-
-<blockquote>
-<p>流水年华, 物是人非, 岁月已悄上眉梢. 那曾经一起幻想的小屁孩, 都渐行渐远, 聚少离多.<br>父母渐老, 自力尚浅, 责任已悄上肩膀. 那曾经一起玩耍的小屁孩, 都结婚生子, 养家糊口.<br><strong>…</strong></p>
+        <blockquote>
+<p>在Python中, 万物皆对象，而所有对象的共性内容都被定义在PyObject中。PyObject可谓是Python对象机制的基石。<br>本文将简要介绍Python对象机制的实现, 以及其涉及的数据结构和原理。</p>
 </blockquote>
-<a id="more"></a>
-<p><br></p>
-<font color="#D2B48C"><em>写给开始..</em></font>
-
-<p><em>还记得，一起打闹穿梭在稻田间</em><br><em>那时候，清澈的笑声荡漾在天际间</em><br><em>微风中，仿佛弥漫着甜蜜的果酿</em><br><em>不经意，传来迷人的飘香</em></p>
-<p><em>那赖皮的老黄牛啊@…@</em><br><em>可不允再偷吃邻家老黄的稻苗呀~</em><br><em>老黄呀，有话好说，放下你手中的锄头~_~</em><br><em>扛着追跑可累呀@_@</em></p>
-<p><em>还有你这个笨笨的小朱子$_$</em><br><em>下次偷大朱子的番薯呀..</em><br><em>记得不要把大朱子偷回来&gt;_&lt;</em></p>
-<p><em>可怜的老妈子~</em><br><em>每天都要挨家挨户把我捆回去~_~</em><br><em>还有那做不会的作业</em><br><em>学霸同桌这次再借我抄一会~~</em></p>
-<p><font color="#D2B48C"><em>最后写给自己..</em></font><br><strong><font color="#0099FF">岁月如若静好, 则怡养身心. 岁月倘若惨淡，则多番历经…</font></strong></p>
+<h3 id="对象机制基石-PyObject"><a href="#对象机制基石-PyObject" class="headerlink" title="对象机制基石-PyObject"></a>对象机制基石-<code>PyObject</code></h3><p>在介绍Python对象之前，首先有必要介绍一下<code>PyObject</code>和<code>PyVarObject</code>的定义。通过typedef定义了<code>结构体_object</code>新的数据类型名: <code>PyObject</code>,而<code>PyObject</code>的核心定义在宏<code>PyObject_HEAD</code>。而<code>PyVarObject</code>实际是在<code>PyObject_HEAD</code>的基础上增加了变长数量<code>ob_size</code>字段。</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// [object.h]</div><div class="line">// 1. 指向定长python object对象的指针都可以转换为PyObject* </div><div class="line">// 2. 指向变长python object对象的指针都可以转换为PyVarObject*</div><div class="line"></div><div class="line">typedef struct _object &#123;</div><div class="line">    PyObject_HEAD</div><div class="line">&#125; PyObject;</div><div class="line"></div><div class="line">typedef struct &#123;</div><div class="line">    PyObject_VAR_HEAD</div><div class="line">&#125; PyVarObject;</div></pre></td></tr></table></figure>
+</code></pre><a id="more"></a>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">// PyObject_HEAD 定义</div><div class="line">/* PyObject_HEAD defines the initial segment of every PyObject. */</div><div class="line"></div><div class="line">#define PyObject_HEAD                   \</div><div class="line">    _PyObject_HEAD_EXTRA                \</div><div class="line">    Py_ssize_t ob_refcnt;               \</div><div class="line">    struct _typeobject *ob_type;</div><div class="line"></div><div class="line">// PyObject_VAR_HEAD 定义</div><div class="line">/* PyObject_VAR_HEAD defines the initial segment of all variable-size</div><div class="line"> * container objects.  These end with a declaration of an array with 1</div><div class="line"> * element, but enough space is malloc&apos;ed so that the array actually</div><div class="line"> * has room for ob_size elements.  Note that ob_size is an element count,</div><div class="line"> * not necessarily a byte count.</div><div class="line"> */</div><div class="line">#define PyObject_VAR_HEAD               \</div><div class="line">    PyObject_HEAD                       \</div><div class="line">    Py_ssize_t ob_size; /* Number of items in variable part */</div><div class="line"></div><div class="line">// _PyObject_HEAD_EXTRA 定义</div><div class="line">#ifdef Py_TRACE_REFS</div><div class="line">/* Define pointers to support a doubly-linked list of all live heap objects. */</div><div class="line">#define _PyObject_HEAD_EXTRA            \</div><div class="line">    struct _object *_ob_next;           \</div><div class="line">    struct _object *_ob_prev;</div><div class="line">#define _PyObject_EXTRA_INIT 0, 0,</div><div class="line">#else</div><div class="line">#define _PyObject_HEAD_EXTRA</div><div class="line">#define _PyObject_EXTRA_INIT</div><div class="line">#endif</div></pre></td></tr></table></figure>
+</code></pre><p> 在release模式编译Python, 数据类型名PyObject定义如下:</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line"> * _typeobject: Python内部一种特殊对象, 用来指定对象类型的类型对象</div><div class="line"> * ob_refcnt: Python使用基于引用计数的垃圾回收机制</div><div class="line"> */</div><div class="line">typedef struct _object &#123;</div><div class="line">    Py_ssize_t ob_refcnt;        // 引用计数</div><div class="line">    struct _typeobject *ob_type; // 指向结构体对象类型的类型对象指针</div><div class="line">&#125; PyObject;</div></pre></td></tr></table></figure>
+</code></pre><ol>
+<li>对象类型</li>
+</ol>
+<ol>
+<li>定长对象vs变长对象</li>
+</ol>
 
       
 
@@ -227,7 +228,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">源码阅读</a>
         		</li>
       		
 		</ul>
@@ -283,7 +284,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://polyipnus.github.io/2017/08/11/daily_20170812_deepthought/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://polyipnus.github.io/2018/05/10/daily_20180519_pyint/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,18 +298,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/08/12/daily_20170812_assassins-creed/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/06/24/daily_20180624_py_profile/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          刺客信条-镜花水月，无心去来
+          Python性能工具使用初探
         
       </div>
     </a>
   
   
-    <a href="/2017/08/10/daily_20170810_nginx/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Nginx 高级配置</div>
+    <a href="/2017/09/22/daily-20170922-descriptor-md/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Descriptor初级篇</div>
       <i class="icon-circle-right"></i>
     </a>
   
