@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://polyipnus.github.io/"/>
-  <updated>2018-06-24T06:25:17.014Z</updated>
+  <updated>2018-06-24T06:35:41.612Z</updated>
   <id>https://polyipnus.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://polyipnus.github.io/2018/06/24/daily_20180624_py_profile/"/>
     <id>https://polyipnus.github.io/2018/06/24/daily_20180624_py_profile/</id>
     <published>2018-06-23T16:11:59.610Z</published>
-    <updated>2018-06-24T06:25:17.014Z</updated>
+    <updated>2018-06-24T06:35:41.612Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Python性能工具使用初探"><a href="#Python性能工具使用初探" class="headerlink" title="Python性能工具使用初探"></a>Python性能工具使用初探</h1><blockquote>
 <p>在python开发过程中，针对性能较差的代码通常需要分析调整，以改善运行的效率。本文将简单介绍python常用的性能分析调整工具，更深入的使用可结合官方文档和实际项目进行实践。</p>
@@ -99,9 +99,7 @@
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">1.在需要测试的函数加上@profile装饰</div><div class="line">2.执行命令： python -m memory_profiler line_profile_test.py</div><div class="line"></div><div class="line">输出如下：</div><div class="line">Filename: line_profile_test.py</div><div class="line"></div><div class="line">Line #    Mem usage    Increment   Line Contents</div><div class="line">================================================</div><div class="line"> 5   30.855 MiB   30.855 MiB   @profile</div><div class="line"> 6                             def fun():</div><div class="line"> 7   30.855 MiB    0.000 MiB       a = 0</div><div class="line"> 8   30.855 MiB    0.000 MiB       b = 0</div><div class="line"> 9   33.961 MiB    3.105 MiB       for i in range(100000):</div><div class="line">10   33.961 MiB    0.000 MiB           a = a + i * i</div><div class="line">11</div><div class="line">12   33.961 MiB    0.000 MiB       for i in range(3):</div><div class="line">13   33.961 MiB    0.000 MiB           b += 1</div><div class="line">14   33.961 MiB    0.000 MiB           time.sleep(0.1)</div><div class="line">15</div><div class="line">16   33.961 MiB    0.000 MiB       return a + b</div></pre></td></tr></table></figure>
 </code></pre><h2 id="objgraph"><a href="#objgraph" class="headerlink" title="objgraph"></a>objgraph</h2><p><a href="https://mg.pov.lt/objgraph/" target="_blank" rel="external">Python Object Graphs</a>库提供的objgraph可以用于绘制python对象图。绘制时依赖库<a href="[https://www.graphviz.org/">graphviz</a> <code>brew install graphviz</code>(mac os)和<a href="https://pypi.org/project/xdot/" target="_blank" rel="external">xdot</a>可以通过<code>pip install xdot</code></p>
 <pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; x = []</div><div class="line">&gt;&gt;&gt; y = [x, [x], dict(x=x)]</div><div class="line">&gt;&gt;&gt; import objgraph</div><div class="line">&gt;&gt;&gt; objgraph.show_refs([y], filename=&apos;sample-graph.png&apos;)</div><div class="line">Graph written to ....dot (... nodes)</div><div class="line">Image generated as sample-graph.png</div><div class="line">&gt;&gt;&gt; objgraph.show_backrefs([x], filename=&apos;sample-backref-graph.png&apos;)</div></pre></td></tr></table></figure>
-</code></pre><p>  画图如下:</p>
-<p>  <code>sample-graph.png</code><br>  <img src="../assets/tool/sample-graph.png" align="center/"></p>
-<p>  <code>sample-backref-graph.png</code><br>  <img src="../assets/tool/sample-backref-graph.png" align="center/"></p>
+</code></pre><p>画图如下:<br><img src="/assets/tool/sample-graph.png" alt="sample-graph"><br><img src="/assets/tool/sample-backref-graph.png" alt="sample-backref-graph"></p>
 ]]></content>
     
     <summary type="html">
